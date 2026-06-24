@@ -21,7 +21,7 @@ async function AuthApi(values) {
 
   let validationSchema=Yup.object({
     email:Yup.string().email("Email Invaild").required("Email is required"),
-    password:Yup.string().matches(/^[A-Z][a-z0-9]{5,8}$/,"Password Should Start With Capital").required("Password is required")
+    password:Yup.string().required("Password is required")
   })
 
   let formilAuth=useFormik({

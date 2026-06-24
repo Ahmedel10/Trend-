@@ -40,7 +40,7 @@ async function AuthApi(values) {
   let validationSchema=Yup.object({
     name:Yup.string().min(4,"name should be big that 4").max(15,"name should be less that 15").required("Name is required"),
     email:Yup.string().email("Email Invaild").required("Email is required"),
-    password:Yup.string().matches(/^[A-Z][a-z0-9]{5,8}$/,"Password Should Start With Capital").required("Password is required"),
+    password:Yup.string().matches(/^[A-Z][a-z0-9]{5,8}$/,"Password must start with a capital letter and contain 6-9 characters and no special character").required("Password is required"),
  rePassword: Yup.string().oneOf([Yup.ref("password")], "Passwords must match").required("Confirm Password is required"),
 
     age:Yup.number().max(80,"Age should be less that 80").min(18,"Age should be big that 18").required("Age is required "),
